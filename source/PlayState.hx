@@ -341,8 +341,8 @@ class PlayState extends MusicBeatState
 			case '-god':
 			//the text to appear;
 			dialogue = [
-				"...This isn't right."
-				"Of course it's not."
+				"...This isn't right.",
+				"Of course it's not.",
 				"GF, don't even..."
 			];
 			//the sprites to go along with text (n for no change)
