@@ -155,7 +155,7 @@ class PlayState extends MusicBeatState
 	var godMoveGf:Bool = false;
 	var godMoveSh:Bool = false;
 
-	
+
 	public static var campaignScore:Int = 0;
 
 	var defaultCamZoom:Float = 1.05;
@@ -230,7 +230,7 @@ class PlayState extends MusicBeatState
 		Conductor.changeBPM(SONG.bpm);
 
 		mania = SONG.mania;
-		
+
 		switch (SONG.song.toLowerCase())
 		{
 			case 'tutorial':
@@ -245,7 +245,7 @@ class PlayState extends MusicBeatState
 					"I'll channel some power through a regular\nsong battle.",
 					"Won't feel any different from singing\nnormally as power cannalization has\nno feeling.",
 					"...",
-					"I just wanna beat that kid. will this\nhelp me do that?", //This house is a mess, there ain't nothing u can do but sing! I hope yo dog isn't fuckin dead tho
+					"I just wanna beat that cat. will this\nhelp me do that?", //This house is a mess, there ain't nothing u can do but sing! I hope yo dog isn't fuckin dead tho
 					"This will give you more control over \nvoice-direction correlation",
 					"I can sense that you've got great singing\nspeed already.",
 					"With this you'll be like, unstoppable!",
@@ -272,11 +272,12 @@ class PlayState extends MusicBeatState
 				dialogue = [
 					"Hello again punk",
 					"Remember me?",
-					"beep boop",
-					"Now you'll see how it feels",
-					"There's no way you can win this time.",
-					"bap",
-					"Oh you funkin' bet!"
+					"Oh, it's you, meow.",
+					"I know what you did, giving BF more power...",
+					"There's no way you can win this time.\nSurely, your power can't\n go against this!",
+					"Oh really?",
+					"Oh you funkin' bet!",
+					"(It seems he doesn't know how my power works...)"
 				];
 				//the sprites to go along with text (n for no change)
 				dface = [
@@ -284,25 +285,26 @@ class PlayState extends MusicBeatState
 						"f_bf",
 						"f_matt_ang", "f_matt_down",
 						"f_bf_burn",
-						"f_matt_up"
+						"f_matt_up",
+						"f_bf"
 						];
 				//the sides of the faces (1=left, -1=right and flipped)
-				dside = [1, 1, -1, 1, 1, -1, 1];
+				dside = [1, 1, -1, 1, 1, -1, 1, -1];
 			case 'final-destination':
 				//the text to appear;
 				dialogue = [
-					"GOD DAMN IT!!!!",
+					"GOD DAMN IT!!!!\nWHAT THE ACTUAL FUNK IS WRONG WITH YOU,\nCAT?!",
 					"Hey, like, what's wrong dude?",
 					"I CAN'T! I CAN'T BEAT THIS PIECE\nOF SHIT!!!!!",
 					"That's a bit rude...",
-					"There's no point in getting angry. this guy\nis physically unable to loose",//4
+					"There's no point in getting angry. this kid\nis physically unable to loose",//4
 					"...",
 					"...what?",
-					"'That kid' is boyfriend.",
-					"Every single being\nin this universe that has challenged him\nwas defeated and stuff",
-					"That's because any time he looses a battle\nhe dies.",
+					"'That kid' is Gin.",
+					"Every single being\nin this universe that has challenged him\nwas defeated and stuff\nSame with Boyfriend.",
+					"That's because any time he is challenged, is power level will exceed his opponents.",
 					"!!!",
-					"But death does not mean end to him, every\ntime he dies he is given the choice to\nreset time to a certain state",
+					"Not only that, but if he loses, he dies, and can reset to a certain state.",
 					"That means that from our perspective, there\nis no possible outcome in which the flow\nof time continues after he's defeated",
 					"What the hell",
 					"I've been fighting for nothing?",//14
@@ -310,9 +312,10 @@ class PlayState extends MusicBeatState
 					"Hey, I'll tell you what.",
 					"We can't beat him but we can sure as\nheck give him a challenge.",
 					"You wanna sing together?",
-					"Yeah man! with my power and your speed,\nhe's bound to have a bad time.",
-					"If that makes you feel better of course...",
-					"You know what? Let's do this!"
+					"Yeah man! with my power and your speed,\nhe's bound to have a bad time.\n",
+					"If that makes you feel better of course...\nAnd maybe, we could even beat his power!",
+					"You know what? Let's do this!",
+					"(Heh... They have no idea, meow.)"
 				];
 				//the sprites to go along with text (n for no change)
 				dface = [
@@ -329,13 +332,31 @@ class PlayState extends MusicBeatState
 						"f_matt",
 						"f_sh_smug", "f_sh_ser",
 						"f_matt_up",
+						"f_bf"
 						];
 				//the sides of the faces (1=left, -1=right and flipped)
-				dside = [1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1];
+				dside = [1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, -1];
 				exDad = true;
 				s_ending = true;
+			case '-god'
+			//the text to appear;
+			dialogue = [
+				"...This isn't right."
+				"Of course it's not."
+				"GF, don't even..."
+			];
+			//the sprites to go along with text (n for no change)
+			dface = [
+					"f_bf_shocked",
+					"f_gf",
+					"f_bf"
+					];
+			//the sides of the faces (1=left, -1=right and flipped)
+			dside = [1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, -1];
+			exDad = true;
+			s_ending = true;
 			case 'dadbattle':
-				
+
 			case 'garden-havoc':
 		}
 
@@ -606,7 +627,7 @@ class PlayState extends MusicBeatState
 			bg.scale.set(6, 6);
 			add(bg);
 
-			/* 
+			/*
 				var bg:FlxSprite = new FlxSprite(posX, posY).loadGraphic(Paths.image('weeb/evilSchoolBG'));
 				bg.scale.set(6, 6);
 				// bg.setGraphicSize(Std.int(bg.width * 6));
@@ -628,7 +649,7 @@ class PlayState extends MusicBeatState
 			// bg.shader = wiggleShit.shader;
 			// fg.shader = wiggleShit.shader;
 
-			/* 
+			/*
 				var waveSprite = new FlxEffectSprite(bg, [waveEffectBG]);
 				var waveSpriteFG = new FlxEffectSprite(fg, [waveEffectFG]);
 
@@ -883,7 +904,7 @@ class PlayState extends MusicBeatState
 		}
 
 
-		
+
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
 
 		// REPOSITIONING PER STAGE
@@ -970,7 +991,7 @@ class PlayState extends MusicBeatState
 
 		strumLine = new FlxSprite(0, 50).makeGraphic(FlxG.width, 10);
 		strumLine.scrollFactor.set();
-		
+
 		if (FlxG.save.data.downscroll)
 			strumLine.y = FlxG.height - 165;
 
@@ -1148,7 +1169,7 @@ class PlayState extends MusicBeatState
 			}
 
 			switch (cs)
-			{		
+			{
 				case 'god-eater':
 					godCutEnd = true;
 					godMoveGf = true;
@@ -1260,7 +1281,7 @@ class PlayState extends MusicBeatState
 			{
 				new FlxTimer().start(0.03, function(ap_dp:FlxTimer)
 				{
-					
+
 					if (tb_appear == 1)
 					{
 						if (tbox.alpha < 1)
@@ -1599,7 +1620,7 @@ class PlayState extends MusicBeatState
 						noticeB[i].scrollFactor.set();
 						//notice[i].alpha = 0;
 						noticeB[i].x -= 0;
-						
+
 
 						nShadowB[i] = new FlxText(0, 0, 0, cText[i], 24);
 						nShadowB[i].x = noticeB[i].x + 4;
@@ -1615,7 +1636,7 @@ class PlayState extends MusicBeatState
 						add(noticeB[i]);
 					}
 
-					
+
 				}
 				else
 				{
@@ -2092,7 +2113,7 @@ class PlayState extends MusicBeatState
 							});
 						});
 					});
-				});	
+				});
 			});
 		});
 		new FlxTimer().start(0.001, function(shk:FlxTimer)
@@ -2572,7 +2593,7 @@ class PlayState extends MusicBeatState
 		if (generatedMusic)
 			{
 				notes.forEachAlive(function(daNote:Note)
-				{	
+				{
 					if (daNote.y > FlxG.height)
 					{
 						daNote.active = false;
@@ -2583,20 +2604,20 @@ class PlayState extends MusicBeatState
 						daNote.visible = true;
 						daNote.active = true;
 					}
-	
+
 					if (!daNote.mustPress && daNote.wasGoodHit)
 					{
 						if (SONG.song != 'Tutorial')
 							camZooming = true;
-	
+
 						var altAnim:String = "";
-	
+
 						if (SONG.notes[Math.floor(curStep / 16)] != null)
 						{
 							if (SONG.notes[Math.floor(curStep / 16)].altAnim)
 								altAnim = '-alt';
 						}
-						
+
 						if (mania == 0)
 						{
 							switch (Math.abs(daNote.noteData))
@@ -2691,18 +2712,18 @@ class PlayState extends MusicBeatState
 								}
 							}
 						}
-	
+
 						dad.holdTimer = 0;
 						if (exDad) dad2.holdTimer = 0;
-	
+
 						if (SONG.needsVoices)
 							vocals.volume = 1;
-	
+
 						daNote.kill();
 						notes.remove(daNote, true);
 						daNote.destroy();
 					}
-	
+
 					if (FlxG.save.data.downscroll)
 						daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(SONG.speed, 2)));
 					else
@@ -2710,7 +2731,7 @@ class PlayState extends MusicBeatState
 					//trace(daNote.y);
 					// WIP interpolation shit? Need to fix the pause issue
 					// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.SONG.speed));
-	
+
 					if (daNote.y < -daNote.height && !FlxG.save.data.downscroll || daNote.y >= strumLine.y + 106 && FlxG.save.data.downscroll)
 					{
 						//now with different conditions depending on the note type
@@ -2733,10 +2754,10 @@ class PlayState extends MusicBeatState
 											noteMiss(daNote.noteData);
 									}
 								}
-			
+
 								daNote.active = false;
 								daNote.visible = false;
-			
+
 								daNote.kill();
 								notes.remove(daNote, true);
 								daNote.destroy();
@@ -2794,7 +2815,7 @@ class PlayState extends MusicBeatState
 					}
 			}
 		}
-		
+
 		if (!inCutscene)
 			keyShit();
 
@@ -2958,19 +2979,19 @@ class PlayState extends MusicBeatState
 			var noteDiff:Float = Math.abs(strumtime - Conductor.songPosition);
 			// boyfriend.playAnim('hey');
 			vocals.volume = 1;
-	
+
 			var placement:String = Std.string(combo);
-	
+
 			var coolText:FlxText = new FlxText(0, 0, 0, placement, 32);
 			coolText.screenCenter();
 			coolText.x = FlxG.width * 0.55;
 			coolText.y += sjy;
-	
+
 			var rating:FlxSprite = new FlxSprite();
 			var score:Int = 350;
-	
+
 			var daRating:String = "sick";
-				
+
 			if (noteDiff > Conductor.safeZoneOffset * 2)
 				{
 					daRating = 'shit';
@@ -3062,13 +3083,13 @@ class PlayState extends MusicBeatState
 					health += 0.1;
 				sicks++;
 			}
-	
+
 			if (daRating != 'shit' || daRating != 'bad')
 				{
-	
-	
+
+
 			songScore += score;
-	
+
 			/* if (combo > 60)
 					daRating = 'sick';
 				else if (combo > 12)
@@ -3076,16 +3097,16 @@ class PlayState extends MusicBeatState
 				else if (combo > 4)
 					daRating = 'bad';
 			 */
-	
+
 			var pixelShitPart1:String = "";
 			var pixelShitPart2:String = '';
-	
+
 			if (curStage.startsWith('school'))
 			{
 				pixelShitPart1 = 'weeb/pixelUI/';
 				pixelShitPart2 = '-pixel';
 			}
-	
+
 			rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
 			rating.screenCenter();
 			rating.x = coolText.x - 40;
@@ -3094,17 +3115,17 @@ class PlayState extends MusicBeatState
 			rating.acceleration.y = 550;
 			rating.velocity.y -= FlxG.random.int(140, 175);
 			rating.velocity.x -= FlxG.random.int(0, 10);
-	
+
 			var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
 			comboSpr.screenCenter();
 			comboSpr.x = coolText.x;
 			comboSpr.acceleration.y = 600;
 			comboSpr.velocity.y -= 150;
 			comboSpr.y += sjy;
-	
+
 			comboSpr.velocity.x += FlxG.random.int(1, 10);
 			add(rating);
-	
+
 			if (!curStage.startsWith('school'))
 			{
 				rating.setGraphicSize(Std.int(rating.width * 0.7));
@@ -3117,12 +3138,12 @@ class PlayState extends MusicBeatState
 				rating.setGraphicSize(Std.int(rating.width * daPixelZoom * 0.7));
 				comboSpr.setGraphicSize(Std.int(comboSpr.width * daPixelZoom * 0.7));
 			}
-	
+
 			comboSpr.updateHitbox();
 			rating.updateHitbox();
-	
+
 			var seperatedScore:Array<Int> = [];
-	
+
 			var comboSplit:Array<String> = (combo + "").split('');
 
 			if (comboSplit.length == 2)
@@ -3133,7 +3154,7 @@ class PlayState extends MusicBeatState
 				var str:String = comboSplit[i];
 				seperatedScore.push(Std.parseInt(str));
 			}
-	
+
 			var daLoop:Int = 0;
 			for (i in seperatedScore)
 			{
@@ -3141,7 +3162,7 @@ class PlayState extends MusicBeatState
 				numScore.screenCenter();
 				numScore.x = coolText.x + (43 * daLoop) - 90;
 				numScore.y += 80;
-	
+
 				if (!curStage.startsWith('school'))
 				{
 					numScore.antialiasing = true;
@@ -3152,14 +3173,14 @@ class PlayState extends MusicBeatState
 					numScore.setGraphicSize(Std.int(numScore.width * daPixelZoom));
 				}
 				numScore.updateHitbox();
-	
+
 				numScore.acceleration.y = FlxG.random.int(200, 300);
 				numScore.velocity.y -= FlxG.random.int(140, 160);
 				numScore.velocity.x = FlxG.random.float(-5, 5);
-	
+
 				if (combo >= 10 || combo == 0)
 					add(numScore);
-	
+
 				FlxTween.tween(numScore, {alpha: 0}, 0.2, {
 					onComplete: function(tween:FlxTween)
 					{
@@ -3167,32 +3188,32 @@ class PlayState extends MusicBeatState
 					},
 					startDelay: Conductor.crochet * 0.002
 				});
-	
+
 				daLoop++;
 			}
-			/* 
+			/*
 				trace(combo);
 				trace(seperatedScore);
 			 */
-	
+
 			coolText.text = Std.string(seperatedScore);
 			// add(coolText);
-	
+
 			FlxTween.tween(rating, {alpha: 0}, 0.2, {
 				startDelay: Conductor.crochet * 0.001
 			});
-	
+
 			FlxTween.tween(comboSpr, {alpha: 0}, 0.2, {
 				onComplete: function(tween:FlxTween)
 				{
 					coolText.destroy();
 					comboSpr.destroy();
-	
+
 					rating.destroy();
 				},
 				startDelay: Conductor.crochet * 0.001
 			});
-	
+
 			curSection += 1;
 			}
 		}
@@ -3204,7 +3225,7 @@ class PlayState extends MusicBeatState
 		var upHold:Bool = false;
 		var downHold:Bool = false;
 		var rightHold:Bool = false;
-		var leftHold:Bool = false;	
+		var leftHold:Bool = false;
 
 		var l1Hold:Bool = false;
 		var uHold:Bool = false;
@@ -3313,13 +3334,13 @@ class PlayState extends MusicBeatState
 			//timeCurrently = Math.abs(rep.replay.keyPresses[repPresses].time - Conductor.songPosition);
 			//timeCurrentlyR = Math.abs(rep.replay.keyReleases[repReleases].time - Conductor.songPosition);
 
-			
+
 			if (repPresses < rep.replay.keyPresses.length && repReleases < rep.replay.keyReleases.length)
 			{
 				upP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition) && rep.replay.keyPresses[repPresses].key == "up";
 				rightP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition) && rep.replay.keyPresses[repPresses].key == "right";
 				downP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition) && rep.replay.keyPresses[repPresses].key == "down";
-				leftP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition)  && rep.replay.keyPresses[repPresses].key == "left";	
+				leftP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition)  && rep.replay.keyPresses[repPresses].key == "left";
 
 				upR = NearlyEquals(rep.replay.keyReleases[repReleases].time, Conductor.songPosition) && rep.replay.keyReleases[repReleases].key == "up";
 				rightR = NearlyEquals(rep.replay.keyReleases[repReleases].time, Conductor.songPosition) && rep.replay.keyReleases[repReleases].key == "right";
@@ -3357,7 +3378,7 @@ class PlayState extends MusicBeatState
 		// FlxG.watch.addQuick('asdfa', upP);
 		var ankey = (upP || rightP || downP || leftP);
 		if (mania == 1)
-		{ 
+		{
 			ankey = (l1P || uP || r1P || l2P || dP || r2P);
 			controlArray = [l1P, uP, r1P, l2P, dP, r2P];
 		}
@@ -3370,11 +3391,11 @@ class PlayState extends MusicBeatState
 			{
 				repPresses++;
 				boyfriend.holdTimer = 0;
-	
+
 				var possibleNotes:Array<Note> = [];
-	
+
 				var ignoreList:Array<Int> = [];
-	
+
 				notes.forEachAlive(function(daNote:Note)
 				{
 					if (daNote.canBeHit && daNote.mustPress && !daNote.tooLate)
@@ -3382,16 +3403,16 @@ class PlayState extends MusicBeatState
 						// the sorting probably doesn't need to be in here? who cares lol
 						possibleNotes.push(daNote);
 						possibleNotes.sort((a, b) -> Std.int(a.strumTime - b.strumTime));
-	
+
 						ignoreList.push(daNote.noteData);
 					}
 				});
-	
-				
+
+
 				if (possibleNotes.length > 0)
 				{
 					var daNote = possibleNotes[0];
-	
+
 					// Jump notes
 					if (possibleNotes.length >= 2)
 					{
@@ -3449,7 +3470,7 @@ class PlayState extends MusicBeatState
 						}
 					}
 					else // regular notes?
-					{	
+					{
 						if (loadRep)
 						{
 							if (NearlyEquals(daNote.strumTime,rep.replay.keyPresses[repPresses].time, 30))
@@ -3463,12 +3484,12 @@ class PlayState extends MusicBeatState
 						else
 							noteCheck(controlArray, daNote);
 					}
-					/* 
+					/*
 						if (controlArray[daNote.noteData])
 							goodNoteHit(daNote);
 					 */
 					// trace(daNote.noteData);
-					/* 
+					/*
 						switch (daNote.noteData)
 						{
 							case 2: // NOTES YOU JUST PRESSED
@@ -3497,7 +3518,7 @@ class PlayState extends MusicBeatState
 					badNoteCheck();
 				}
 			}
-			
+
 			var condition = ((up || right || down || left) && generatedMusic || (upHold || downHold || leftHold || rightHold) && loadRep && generatedMusic);
 			if (mania == 1)
 			{
@@ -3576,7 +3597,7 @@ class PlayState extends MusicBeatState
 					}
 				});
 			}
-	
+
 			if (boyfriend.holdTimer > Conductor.stepCrochet * 4 * 0.001 && !up && !down && !right && !left)
 			{
 				if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss'))
@@ -3584,7 +3605,7 @@ class PlayState extends MusicBeatState
 					boyfriend.playAnim('idle');
 				}
 			}
-	
+
 			playerStrums.forEach(function(spr:FlxSprite)
 			{
 				if (mania == 0)
@@ -3718,7 +3739,7 @@ class PlayState extends MusicBeatState
 							if (n8R) spr.animation.play('static');
 					}
 				}
-				
+
 				if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
 				{
 					spr.centerOffsets();
@@ -3799,7 +3820,7 @@ class PlayState extends MusicBeatState
 			var n6P = controls.N6_P;
 			var n7P = controls.N7_P;
 			var n8P = controls.N8_P;
-			
+
 			if (mania == 0)
 			{
 				if (leftP)
@@ -3866,7 +3887,7 @@ class PlayState extends MusicBeatState
 		});
 		return possibleNotes.length;
 	}
-	
+
 	var mashing:Int = 0;
 	var grace:Bool = false;
 
@@ -3876,7 +3897,7 @@ class PlayState extends MusicBeatState
 			{
 				if (controlArray[note.noteData])
 					goodNoteHit(note);
-				else if (!theFunne && startedCountdown && !cs_reset) 
+				else if (!theFunne && startedCountdown && !cs_reset)
 					badNoteCheck();
 				else if (rep.replay.keyPresses.length > repPresses && !controlArray[note.noteData])
 				{
@@ -3884,7 +3905,7 @@ class PlayState extends MusicBeatState
 					{
 						goodNoteHit(note);
 					}
-					else if (!theFunne && startedCountdown && !cs_reset) 
+					else if (!theFunne && startedCountdown && !cs_reset)
 						badNoteCheck();
 				}
 			}
@@ -3925,7 +3946,7 @@ class PlayState extends MusicBeatState
 							}
 							else
 								totalNotesHit += 1;
-			
+
 							var sDir:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
 							if (mania == 1)
 							{
@@ -3937,7 +3958,7 @@ class PlayState extends MusicBeatState
 							}
 
 							boyfriend.playAnim('sing' + sDir[note.noteData], true);
-				
+
 							playerStrums.forEach(function(spr:FlxSprite)
 							{
 								if (Math.abs(note.noteData) == spr.ID)
@@ -3946,14 +3967,14 @@ class PlayState extends MusicBeatState
 								}
 								//spr.updateHitbox();
 							});
-				
+
 							note.wasGoodHit = true;
 							vocals.volume = 1;
-				
+
 							note.kill();
 							notes.remove(note, true);
 							note.destroy();
-							
+
 							updateAccuracy();
 
 							grace = true;
@@ -3970,7 +3991,7 @@ class PlayState extends MusicBeatState
 					}
 				}
 			}
-		
+
 
 	var fastCarCanDrive:Bool = true;
 
@@ -4655,7 +4676,7 @@ class PlayState extends MusicBeatState
 		{
 			case 'end':
 				dialogue = [
-					"Man...",
+					"Man...\nHow the hell...?",
 					"Stop like, thinking about it.",
 					"We just have to accept it.",
 					"Yeah but",
@@ -4665,6 +4686,12 @@ class PlayState extends MusicBeatState
 					"What would happen to us?",
 					"...",
 					"..."
+					"(It's not like I'd ever give u-)"
+					"(Wait... Why are they looking at me like\nthat?)"
+					"(What's this dark feeling?)"
+					"(Something's not right here-)"
+					"OH GOD-"
+
 				];
 				dface = [
 						"f_matt",
@@ -4672,7 +4699,8 @@ class PlayState extends MusicBeatState
 						"f_matt", "f_matt_down",
 						"f_sh_smug",
 						"f_matt_down", "f_matt_ang",
-						"f_sh", "f_sh_kill"
+						"f_sh", "f_sh_kill",
+						"f_bf_burn", "f_bf", "f_bf_scared", "f_bf_shocked"
 						];
 				dside = [1, -1, -1, 1, 1, -1, 1, 1, -1, -1];
 			case 'scooby_hold_talk':
