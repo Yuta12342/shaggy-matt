@@ -4685,11 +4685,11 @@ class PlayState extends MusicBeatState
 					"Like, if he dies and decides to not\nrevert time...",
 					"What would happen to us?",
 					"...",
-					"..."
-					"(It's not like I'd ever give u-)"
-					"(Wait... Why are they looking at me like\nthat?)"
-					"(What's this dark feeling?)"
-					"(Something's not right here-)"
+					"...",
+					"(It's not like I'd ever give u-)",
+					"(Wait... Why are they looking at me like\nthat?)",
+					"(What's this dark feeling?)",
+					"(Something's not right here-)",
 					"OH GOD-"
 
 				];
