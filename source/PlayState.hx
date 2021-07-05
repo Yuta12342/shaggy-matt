@@ -277,7 +277,7 @@ class PlayState extends MusicBeatState
 					"There's no way you can win this time.\nSurely, your power can't\n go against this!",
 					"Oh really?",
 					"Oh you funkin' bet!",
-					"(It seems he doesn't know how my power works...)"
+					"(It seems he doesn't know how my power \nworks...)"
 				];
 				//the sprites to go along with text (n for no change)
 				dface = [
