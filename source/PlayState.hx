@@ -274,7 +274,7 @@ class PlayState extends MusicBeatState
 					"Remember me?",
 					"Oh, it's you, meow.",
 					"I know what you did, giving BF more power...",
-					"There's no way you can win this time.\nSurely, your power can't\n go against this!",
+					"There's no way you can win this time.\nSurely, your power can't go against this!",
 					"Oh really?",
 					"Oh you funkin' bet!",
 					"(It seems he doesn't know how my power \nworks...)"
@@ -293,18 +293,18 @@ class PlayState extends MusicBeatState
 			case 'final-destination':
 				//the text to appear;
 				dialogue = [
-					"GOD DAMN IT!!!!\nWHAT THE ACTUAL FUNK IS WRONG WITH YOU,\nCAT?!",
+					"GOD DAMN IT!!!!\nWHAT THE ACTUAL FUNK IS WRONG WITH \nYOU, CAT?!",
 					"Hey, like, what's wrong dude?",
 					"I CAN'T! I CAN'T BEAT THIS PIECE\nOF SHIT!!!!!",
 					"That's a bit rude...",
-					"There's no point in getting angry. this kid\nis physically unable to loose",//4
+					"There's no point in getting angry. this kid\nis physically unable to lose",//4
 					"...",
 					"...what?",
 					"'That kid' is Gin.",
 					"Every single being\nin this universe that has challenged him\nwas defeated and stuff\nSame with Boyfriend.",
-					"That's because any time he is challenged, is power level will exceed his opponents.",
+					"That's because any time he is challenged,\nhis power level will exceed his opponents.",
 					"!!!",
-					"Not only that, but if he loses, he dies, and can reset to a certain state.",
+					"Not only that, but if he loses, he dies, and \ncan reset to a certain state.",
 					"That means that from our perspective, there\nis no possible outcome in which the flow\nof time continues after he's defeated",
 					"What the hell",
 					"I've been fighting for nothing?",//14
