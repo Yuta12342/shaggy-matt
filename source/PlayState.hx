@@ -4700,9 +4700,9 @@ class PlayState extends MusicBeatState
 						"f_sh_smug",
 						"f_matt_down", "f_matt_ang",
 						"f_sh", "f_sh_kill",
-						"f_bf_burn", "f_bf", "f_bf_scared", "f_bf_shocked"
+						"f_bf_burn", "f_bf", "f_bf", "f_bf_scared", "f_bf_shocked"
 						];
-				dside = [1, -1, -1, 1, 1, -1, 1, 1, -1, -1];
+				dside = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 			case 'scooby_hold_talk':
 				dialogue = [
 					"Like, what's wrong scoob?",
