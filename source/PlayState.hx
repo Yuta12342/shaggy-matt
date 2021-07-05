@@ -338,7 +338,7 @@ class PlayState extends MusicBeatState
 				dside = [1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, -1];
 				exDad = true;
 				s_ending = true;
-			case '-god'
+			case '-god':
 			//the text to appear;
 			dialogue = [
 				"...This isn't right."
